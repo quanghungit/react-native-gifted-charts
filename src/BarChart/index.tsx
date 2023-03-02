@@ -36,6 +36,7 @@ type PropTypes = {
   stackData?: any;
   side?: String;
   rotateLabel?: Boolean;
+  labelLeft?: number;
   isAnimated?: Boolean;
   animationDuration?: number;
   // animationEasing?: any;
@@ -407,6 +408,7 @@ export const BarChart = (props: PropTypes) => {
   // const oldData = props.oldData || [];
   const side = props.side || '';
   const rotateLabel = props.rotateLabel || false;
+  const labelLeft = props.labelLeft || -4;
   const isAnimated = props.isAnimated || false;
   const animationDuration = props.animationDuration || 800;
   // const animationEasing = props.animationEasing || Easing.ease;
@@ -1655,6 +1657,7 @@ export const BarChart = (props: PropTypes) => {
                     opacity={opacity}
                     disablePress={item.disablePress || props.disablePress}
                     rotateLabel={rotateLabel}
+                    labelLeft={labelLeft}
                     showXAxisIndices={showXAxisIndices}
                     xAxisIndicesHeight={xAxisIndicesHeight}
                     xAxisIndicesWidth={xAxisIndicesWidth}
@@ -1710,6 +1713,7 @@ export const BarChart = (props: PropTypes) => {
                   isAnimated={isAnimated}
                   animationDuration={animationDuration}
                   rotateLabel={rotateLabel}
+                  labelLeft={labelLeft}
                   animatedHeight={animatedHeight}
                   appearingOpacity={appearingOpacity}
                   roundedTop={props.roundedTop}

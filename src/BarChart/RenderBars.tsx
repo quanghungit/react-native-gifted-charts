@@ -39,6 +39,7 @@ type Props = {
   isThreeD?: Boolean;
   isAnimated?: Boolean;
   rotateLabel?: Boolean;
+  labelLeft?: number;
   animatedHeight?: any;
   appearingOpacity?: any;
   animationDuration?: number;
@@ -117,6 +118,7 @@ const RenderBars = (props: Props) => {
     isThreeD,
     isAnimated,
     rotateLabel,
+    labelLeft,
     appearingOpacity,
     opacity,
     animationDuration,
@@ -204,15 +206,15 @@ const RenderBars = (props: Props) => {
                 30) +
               spacing / 2,
             position: 'absolute',
-            left: -4,
-            bottom: (rotateLabel ? -40 : -25) - barMarginBottom,
+            left: labelLeft ? labelLeft : -4,
+            bottom: (rotateLabel ? -50 : -25) - barMarginBottom,
             opacity: appearingOpacity,
           },
           value < 0 && {transform: [{rotate: '180deg'}]},
           rotateLabel
             ? props.horizontal
               ? {transform: [{rotate: '330deg'}]}
-              : {transform: [{rotate: '60deg'}]}
+              : {transform: [{rotate: '-45deg'}]}
             : props.horizontal
             ? {transform: [{rotate: '-90deg'}]}
             : {},
